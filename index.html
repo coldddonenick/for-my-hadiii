@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С 8 марта, солнце</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #551A2C; /* Темно-бордовый фон */
+    color: #551A2C; 
+    text-align: center;
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+}
+h1 {
+    color: gold;
+    font-size: 3em;
+    margin: 50px 0;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+section {
+    margin: 50px 0;
+    padding: 40px;
+    background: #F4A8C4; /* Розовый цвет */
+    border: 5px solid gold;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1.5s ease-in-out;
+}
+img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+}
+.photo-animate:nth-child(odd) {
+    transform: translateX(-200px);
+}
+.photo-animate:nth-child(even) {
+    transform: translateX(200px);
+}
+.show {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<h1>С 8 МАРТА!!</h1>
+<section class="fade">
+<h2>Мое Солнце</h2>
+<p>Твоя улыбка это что-то невероятное, теплое и очень милое (улыбайся почаще)</p>
+<p>С тобой всё становится особенным, простые разговоры превращаются в самые важные слова, а обычные дни в лучшие воспоминания. Ты делаешь мир вокруг светлее, наполняешь его теплом, и я не устану повторять, как сильно я тебя люблю</p>
+</section>
+
+<section class="fade">
+<h2>О Ней…</h2>
+<p>В ее карих глазах столько глубины, что я хочу потеряться в них и не захотеть находиться.</p>
+<p>Она тот человек, который делает все вокруг особенным. С ней даже самые обычные моменты становятся незабываемыми, а мир кажется лучше и добрее.</p>
+<p>Я счастлив, что знаю ее, что могу любить ее. Она мое вдохновение, моя нежность, мое все.</p>
+</section>
+
+<section class="fade">
+<h2>Будь Счастлива</h2>
+<p>Я понял что настоящая любовь это не только быть рядом, показывать насколько она сильна, но и уметь отпускать. Если так будет лучше для тебя. Если свобода сделает тебя счастливее, значит, так правильно. Спасибо Хади..</p>
+</section>
+
+<section class="fade">
+<h2>МНЕ <br> ТАК <br> НРАВИТСЯ <br> ТЕБЯ <br> ЛЮБИТЬ🥹</h2>
+</section>
+
+<section>
+<img src="images/photo_1.jpeg" class="photo-animate">
+<img src="images/photo_2.jpeg" class="photo-animate">
+<img src="images/photo_3.jpeg" class="photo-animate">
+<img src="images/photo_4.jpeg" class="photo-animate">
+</section>
+
+<h3 style="color: pink; margin-bottom: 50px; opacity: 0; animation: fadeIn 2s 4s forwards;">for hadi🌸<br><span style='font-size: 20px;'>i love u</span></h3>
+
+<script>
+window.addEventListener("scroll", function() {
+    const sections = document.querySelectorAll(".fade");
+    const photos = document.querySelectorAll(".photo-animate");
+    
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            sec.classList.add("show");
+        }
+    });
+
+    photos.forEach(photo => {
+        const top = photo.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            photo.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
